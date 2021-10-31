@@ -1,0 +1,1 @@
+02/08/2021 19:57:07.417 -> Entity Framework Core 5.0.1 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoTrackingWithIdentityResolution SensitiveDataLoggingEnabled DetailedErrorsEnabled CommandTimeout=60 MaxBatchSize=100 QuerySplittingBehavior=SplitQuery MigrationsHistoryTable=curso_ef_core 
