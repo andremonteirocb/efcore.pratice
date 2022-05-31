@@ -1,4 +1,4 @@
-## Projeto baseado nos estudos realizados na plataforma https://desenvolvedor.io, nos cursos de Introdução ao Entity Framework Core, Dominando o Entity Framework Core com o professor Rafael Almeida.
+## Projeto baseado nos estudos realizados na plataforma https://desenvolvedor.io, através dos cursos: Introdução ao Entity Framework Core e Dominando o Entity Framework Core, com o professor Rafael Almeida.
 
 /*gerando script*/
 dotnet ef migrations script -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj -o .\Fundamentos.EFCore\Data\Sql\Initial.sql
