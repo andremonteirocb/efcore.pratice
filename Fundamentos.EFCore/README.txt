@@ -1,3 +1,5 @@
+## Projeto baseado nos estudos realizados na plataforma https://desenvolvedor.io, nos cursos de IntroduÃ§Ã£o ao Entity Framework Core, Dominando o Entity Framework Core com o professor Rafael Almeida.
+
 /*gerando script*/
 dotnet ef migrations script -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj -o .\Fundamentos.EFCore\Data\Sql\Initial.sql
 
@@ -22,7 +24,7 @@ dotnet ef migrations update -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj -v
  
 Para utilizar o Code First, execute as etapas abaixo:
 RESUMO:
-1 - Faça Build do projeto
+1 - FaÃ§a Build do projeto
 2 - Abra o Package Manager Console
 3 - Execute o comando 
 	add-migration <identificacaoDaMudancaNoBanco>
@@ -31,16 +33,16 @@ RESUMO:
 5 - Execute o comando
 	Update-Database -Script -SourceMigration <MigrationOrigem> -TargetMigration <MigrationDestino>
 6 - Copie o script gerado e insira-o no arquivo gerado no passo 5.
-7 - Quando a alteração for publicada em produção, execute os scripts gerados, em ordem.
-	Para checar qual foi o último script gerado, faça uma consulta na tabela __MigrationHistory
+7 - Quando a alteraÃ§Ã£o for publicada em produÃ§Ã£o, execute os scripts gerados, em ordem.
+	Para checar qual foi o Ãºltimo script gerado, faÃ§a uma consulta na tabela __MigrationHistory
 
-EXPLICAÇÕES:
+EXPLICAÃ‡Ã•ES:
 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 
-1 - Faça Build do projeto
+1 - FaÃ§a Build do projeto
 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
@@ -61,11 +63,11 @@ add-migration inclusaoProfessores
 add-migration alteracaoHorarios
 add-migration criacaoViewAlunos
 
-Esse comando produzirá uma classe dentro da pasta Migrations no seguinte padrão:
+Esse comando produzirÃ¡ uma classe dentro da pasta Migrations no seguinte padrÃ£o:
 <data e hora><identificacao da mudanca no banco>.cs
 
-Essa classe registra todas as alterações do banco de dados realizadas no domínio e determina a sequência de operações a serem executadas pelo Entity.
-Caso necessário, apesar de incomum, é possível alterar o comportamento de algumas instruções nessa classe, personalizando algumas ações e alterando o comportamento padrão do Entity.
+Essa classe registra todas as alteraÃ§Ãµes do banco de dados realizadas no domÃ­nio e determina a sequÃªncia de operaÃ§Ãµes a serem executadas pelo Entity.
+Caso necessÃ¡rio, apesar de incomum, Ã© possÃ­vel alterar o comportamento de algumas instruÃ§Ãµes nessa classe, personalizando algumas aÃ§Ãµes e alterando o comportamento padrÃ£o do Entity.
 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
@@ -80,17 +82,17 @@ Caso necessário, apesar de incomum, é possível alterar o comportamento de alguma
 
 5 - Identifique as seguintes classes da pasta Migrations:
 
-<Classe_1> : A classe de Migrations anterior à alteração que você quer aplicar (sem a extensão.cs)
-<Classe_2> : A classe de Migrations que você quer aplicar (no caso, a classe <data e hora><identificacao da mudanca no banco>.cs ) (sem a extensão.cs)
+<Classe_1> : A classe de Migrations anterior Ã  alteraÃ§Ã£o que vocÃª quer aplicar (sem a extensÃ£o.cs)
+<Classe_2> : A classe de Migrations que vocÃª quer aplicar (no caso, a classe <data e hora><identificacao da mudanca no banco>.cs ) (sem a extensÃ£o.cs)
 
 Update-Database -Script -SourceMigration <Classe_1> -TargetMigration <Classe_2>
 
 Exemplo:
 Update-Database -Script -SourceMigration: 201906122112332_agendamentosBase -TargetMigration: 201907111440070_criterioavaliativo
 
-Esse comando gerará as instruções SQL baseadas nas alterações que você aplicou no domínio tendo como base a última atualização aplicada no banco de dados destino.
-É importante usar o parâmetro "-Script" para que o Entity não aplique as mudanças diretamente no banco configurado no Web.config. Fazendo isso, conseguimos aplicar
-as alterações no banco de produção mesmo sem ter acesso direto ao servidor do mesmo.
+Esse comando gerarÃ¡ as instruÃ§Ãµes SQL baseadas nas alteraÃ§Ãµes que vocÃª aplicou no domÃ­nio tendo como base a Ãºltima atualizaÃ§Ã£o aplicada no banco de dados destino.
+Ã‰ importante usar o parÃ¢metro "-Script" para que o Entity nÃ£o aplique as mudanÃ§as diretamente no banco configurado no Web.config. Fazendo isso, conseguimos aplicar
+as alteraÃ§Ãµes no banco de produÃ§Ã£o mesmo sem ter acesso direto ao servidor do mesmo.
 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
@@ -102,8 +104,8 @@ as alterações no banco de produção mesmo sem ter acesso direto ao servidor do me
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 
-7 - Quando a alteração for publicada em produção, execute os scripts gerados, em ordem.
-Para checar qual foi o último script gerado, faça uma consulta na tabela __MigrationHistory
+7 - Quando a alteraÃ§Ã£o for publicada em produÃ§Ã£o, execute os scripts gerados, em ordem.
+Para checar qual foi o Ãºltimo script gerado, faÃ§a uma consulta na tabela __MigrationHistory
 
 select * from __MigrationHistory order by 1 desc
 
