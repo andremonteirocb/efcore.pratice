@@ -1,21 +1,21 @@
 ## Projeto baseado nos estudos realizados na plataforma https://desenvolvedor.io, através dos cursos: Introdução ao Entity Framework Core e Dominando o Entity Framework Core, com o professor Rafael Almeida.
 
-# gerando script
+#### Gerando script
 dotnet ef migrations script -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj -o .\Fundamentos.EFCore\Data\Sql\Initial.sql
 
-# gerando script idempotente
+#### Gerando script idempotente
 dotnet ef migrations script -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj -o .\Fundamentos.EFCore\Data\Sql\Initial.sql -i
 
-# adicionando a migrations
+#### Adicionando a migrations
 dotnet ef migrations add Initial --p .\Fundamentos.EFCore\Fundamentos.EFCore
 
-# revertendo a migrations
+#### Revertendo a migrations
 dotnet ef migrations remove -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj
 
-# aplindo migrations
+#### Aplindo migrations
 dotnet ef migrations update -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj -v
 
-# instalando pacotes nuget
+#### Instalando pacotes nuget
  dotnet add .\Fundamentos.EFCore\Fundamentos.EFCore.csproj package nome_pacote_nuget --version 3.1.5
 
 ### Para utilizar o Code First, execute as etapas abaixo:
