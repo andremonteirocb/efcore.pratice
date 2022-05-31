@@ -32,27 +32,14 @@ dotnet ef migrations update -p .\Fundamentos.EFCore\Fundamentos.EFCore.csproj -v
 	Para checar qual foi o último script gerado, faça uma consulta na tabela __MigrationHistory
 
 ### Explicações:
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-
 ## 1 - Faça Build do projeto
-
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-
+		
 ## 2 - Abra o Package Manager Console
 Caminho: Tools/Nuget Package Manager/Package Manager Console
 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-
 ## 3 - Execute o comando abaixo
 add-migration <identificacao da mudanca no banco>
-
-Exemplos:
+Ex:
 add-migration inclusaoProfessores
 add-migration alteracaoHorarios
 add-migration criacaoViewAlunos
@@ -63,16 +50,8 @@ Esse comando produzirá uma classe dentro da pasta Migrations no seguinte padrã
 Essa classe registra todas as alterações do banco de dados realizadas no domínio e determina a sequência de operações a serem executadas pelo Entity.
 Caso necessário, apesar de incomum, é possível alterar o comportamento de algumas instruções nessa classe, personalizando algumas ações e alterando o comportamento padrão do Entity.
 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-
 ## 4 - Para efeito de rastreio, crie um arquivo .sql na pasta Scripts com o mesmo nome da classe gerada no passo anterior.
 <data e hora><identificacao da mudanca no banco>.sql
-
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 
 ## 5 - Identifique as seguintes classes da pasta Migrations:
 
@@ -88,19 +67,11 @@ Esse comando gerará as instruções SQL baseadas nas alterações que você apl
 É importante usar o parâmetro "-Script" para que o Entity não aplique as mudanças diretamente no banco configurado no Web.config. Fazendo isso, conseguimos aplicar
 as alterações no banco de produção mesmo sem ter acesso direto ao servidor do mesmo.
 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-
 ## 6 - Copie o script gerado e insira-o no arquivo gerado no passo 5.
-
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 
 ## 7 - Quando a alteração for publicada em produção, execute os scripts gerados, em ordem.
 Para checar qual foi o último script gerado, faça uma consulta na tabela __MigrationHistory
 
-select * from __MigrationHistory order by 1 desc
+SELECT * FROM __MigrationHistory ORDER BY 1 DESC
 
 
