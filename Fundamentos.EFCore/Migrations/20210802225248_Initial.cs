@@ -40,7 +40,7 @@ namespace Fundamentos.EFCore.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR schema_sequencia.nome_da_sequencia"),
-                    Descricao = table.Column<string>(type: "VARCHAR(100)", nullable: true, collation: "SQL_Latin1_General_CP1_CS_AI"),
+                    Descricao = table.Column<string>(type: "VARCHAR(100)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
                     Ativo = table.Column<bool>(type: "bit", nullable: false),
                     Excluido = table.Column<bool>(type: "bit", nullable: false)
                 },

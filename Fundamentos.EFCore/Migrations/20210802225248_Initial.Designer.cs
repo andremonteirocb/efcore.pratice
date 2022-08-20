@@ -18,7 +18,7 @@ namespace Fundamentos.EFCore.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .UseIdentityColumns()
-                .HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CS_AI")
+                .HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
@@ -76,7 +76,7 @@ namespace Fundamentos.EFCore.Migrations
 
                     b.Property<string>("Descricao")
                         .HasColumnType("VARCHAR(100)")
-                        .UseCollation("SQL_Latin1_General_CP1_CS_AI");
+                        .UseCollation("SQL_Latin1_General_CP1_CI_AS");
 
                     b.Property<bool>("Excluido")
                         .HasColumnType("bit");

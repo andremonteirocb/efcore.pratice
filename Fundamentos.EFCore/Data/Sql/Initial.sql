@@ -30,7 +30,7 @@ GO
 
 CREATE TABLE [Departamentos] (
     [Id] int NOT NULL DEFAULT (NEXT VALUE FOR schema_sequencia.nome_da_sequencia),
-    [Descricao] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CS_AI NULL,
+    [Descricao] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
     [Ativo] bit NOT NULL,
     [Excluido] bit NOT NULL,
     CONSTRAINT [PK_Departamentos] PRIMARY KEY ([Id])

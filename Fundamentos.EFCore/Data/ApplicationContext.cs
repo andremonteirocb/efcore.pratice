@@ -15,7 +15,7 @@ namespace Fundamentos.EFCore.Data
 {
     public class ApplicationContext : DbContext
     {
-        private readonly string _connectionString = "Server=localhost\\SQLEXPRESS;Database=DbEFCore;User Id=usr_loja;Password=admin2;Pooling=false;MultipleActiveResultSets=true;";
+        private readonly string _connectionString = "Server=localhost, 1433;Database=DbEFCore;User Id=sa;Password=senha;Pooling=false;MultipleActiveResultSets=true;";
         private readonly StreamWriter _writer = new StreamWriter("meu_log_do_ef_core.txt", append: true);
         public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
@@ -69,10 +69,10 @@ namespace Fundamentos.EFCore.Data
             //            .IsUnique();
 
             //utilizando uma determinada collection específica globamente
-            modelBuilder.UseCollation("SQL_Latin1_General_CP1_CS_AI");
+            modelBuilder.UseCollation("SQL_Latin1_General_CP1_CI_AS");
 
             //utilizando uma determinada collection específica para uma propriedade de uma classe específica
-            modelBuilder.Entity<Departamento>().Property(d => d.Descricao).UseCollation("SQL_Latin1_General_CP1_CS_AI");
+            modelBuilder.Entity<Departamento>().Property(d => d.Descricao).UseCollation("SQL_Latin1_General_CP1_CI_AS");
 
             //criando e utilizando uma determinada sequência específica
             modelBuilder.HasSequence<int>("nome_da_sequencia", "schema_sequencia").StartsAt(1).IncrementsBy(2).HasMin(1).HasMax(10).IsCyclic();
